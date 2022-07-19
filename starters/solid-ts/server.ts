@@ -23,6 +23,7 @@ server.delete('/api/todo/items', (req, reply) => {
 })
 
 await server.register(FastifyVite, {
+  dev: process.argv.includes('--dev'),
   root: import.meta.url,
   renderer: FastifyDXSolid,
 })
